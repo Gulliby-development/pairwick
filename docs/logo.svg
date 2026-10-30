@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="pairwick">
+  <rect x="10" y="10" width="104" height="104" rx="20" fill="#191410"/>
+  <rect x="6" y="6" width="104" height="104" rx="20" fill="#ff9d52" stroke="#191410" stroke-width="4"/>
+  <path d="M34 90V38h16c10 0 16 5 16 13s-6 13-16 13H34" fill="none" stroke="#191410" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="82" cy="46" r="6" fill="#191410"/>
+  <circle cx="82" cy="70" r="6" fill="#191410"/>
+</svg>
