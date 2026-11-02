@@ -157,6 +157,27 @@ two-round results file is another example:
   7 1.0 W8
   8 0.0 L7
   ```
+- `byes PLAYERS RESULTS` requires a clean check and lists the byes already
+  awarded, one `ROUND ID NAME` line each in round order, then the count (`0 byes`,
+  `1 bye`, `2 byes`) and a last line `without a bye: ` followed by the IDs of the
+  players who have not had one, in numeric order, or `none`. A player has at most one
+  bye, so the last line tells who can still receive one. With the four-player
+  two-round example above (no byes), `sbt --server -batch "run byes p.txt r.txt"` prints:
+
+  ```text
+  0 byes
+  without a bye: 1 2 3 4
+  ```
+
+  With five players (`1 Ann`, `2 Bob`, `3 Cy`, `4 Di`, `5 Ed`) in `p5.txt` and the
+  first-round results `1 1 2 1-0`, `1 3 4 0-1` and `1 5 bye` in `r5.txt`,
+  `sbt --server -batch "run byes p5.txt r5.txt"` prints:
+
+  ```text
+  1 5 Ed
+  1 bye
+  without a bye: 1 2 3 4
+  ```
 - `rounds COUNT` accepts one to three decimal digits, with no leading zero,
   and a value from 2 through 999. It gives the recommended number of rounds:
   the least R for which `2^R >= COUNT`. For example,
@@ -171,6 +192,7 @@ two-round results file is another example:
     pair PLAYERS RESULTS
     check PLAYERS RESULTS
     crosstable PLAYERS RESULTS
+    byes PLAYERS RESULTS
     rounds COUNT
   ```
 
