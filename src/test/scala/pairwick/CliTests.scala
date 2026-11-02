@@ -8,7 +8,7 @@ class CliTests extends munit.FunSuite:
       Harness.run(List("help")),
       Result(
         0,
-        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  rounds COUNT\n",
+        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  byes PLAYERS RESULTS\n  rounds COUNT\n",
         ""
       )
     )
@@ -16,7 +16,7 @@ class CliTests extends munit.FunSuite:
       Harness.run(List("-h")),
       Result(
         0,
-        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  rounds COUNT\n",
+        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  byes PLAYERS RESULTS\n  rounds COUNT\n",
         ""
       )
     )
@@ -24,7 +24,7 @@ class CliTests extends munit.FunSuite:
       Harness.run(List("--help")),
       Result(
         0,
-        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  rounds COUNT\n",
+        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  byes PLAYERS RESULTS\n  rounds COUNT\n",
         ""
       )
     )
@@ -33,7 +33,7 @@ class CliTests extends munit.FunSuite:
       Result(
         2,
         "",
-        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  rounds COUNT\n"
+        "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  byes PLAYERS RESULTS\n  rounds COUNT\n"
       )
     )
   }

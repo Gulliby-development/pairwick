@@ -6,7 +6,7 @@ final case class Result(exit: Int, out: String, err: String)
 
 object Cli:
   val usage: String =
-    "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  rounds COUNT\n"
+    "usage: pairwick COMMAND [ARGS]\n  standings PLAYERS RESULTS\n  pair PLAYERS RESULTS\n  check PLAYERS RESULTS\n  crosstable PLAYERS RESULTS\n  byes PLAYERS RESULTS\n  rounds COUNT\n"
 
   def run(
       args: List[String],
@@ -28,7 +28,7 @@ object Cli:
         val command = args.head
         val operands = args.tail
         val known =
-          Set("check", "standings", "pair", "crosstable", "rounds", "help", "-h", "--help")
+          Set("check", "standings", "pair", "crosstable", "byes", "rounds", "help", "-h", "--help")
         if !known.contains(command) then throw Failure("unknown command \"" + command + "\"")
         operands.find(arg => arg.startsWith("-") && arg != "-").foreach { option =>
           throw Failure("unknown option \"" + option + "\"")
@@ -94,6 +94,7 @@ object Cli:
                     Standings.render(players, checked.accepted, checked.rounds)
                   case "crosstable" =>
                     Crosstable.render(players, checked.accepted, checked.rounds)
+                  case "byes" => Byes.render(players, checked.accepted)
                   case "pair" => Pairing.render(players, checked.accepted, checked.rounds)
                 Result(0, output, "")
     catch
